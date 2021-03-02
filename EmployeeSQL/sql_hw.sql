@@ -1,3 +1,4 @@
+--To delete in case of mistakes
 DROP TABLE departments;
 DROP TABLE dept_emp;
 DROP TABLE dept_manager;
@@ -23,13 +24,6 @@ CREATE TABLE dept_emp(
 	dept_no VARCHAR
 );
 
-CREATE TABLE dept_manager(
-	dept_no VARCHAR,
-	emp_no INTEGER,
-	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
-	FOREIGN KEY	(emp_no) REFERENCES employees(emp_no)
-);
-
 CREATE TABLE employees(
 	emp_no INTEGER,
 	emp_title_id VARCHAR,
@@ -39,6 +33,13 @@ CREATE TABLE employees(
 	sex VARCHAR,
 	hire_date DATE NOT NULL,
 	PRIMARY KEY (emp_no)
+);
+
+CREATE TABLE dept_manager(
+	dept_no VARCHAR,
+	emp_no INTEGER,
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY	(emp_no) REFERENCES employees(emp_no)
 );
 
 CREATE TABLE salaries(
@@ -53,3 +54,19 @@ CREATE TABLE titles(
 	PRIMARY KEY (title)
 	--FOREIGN KEY (title_id) REFERENCES employees(emp_title_id)
 );
+
+-- employees and salaries for first query
+
+-- employees for second query
+
+-- employees and dept_manager for third query
+
+-- employees and departments for fourth query
+
+-- employees for fifth query 
+
+-- employees and departments for sixth query. filtered by sales department
+
+-- employees and departments for seventh query. filtered by sales and dev.
+
+-- employees for eight query.
