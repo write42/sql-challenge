@@ -56,19 +56,26 @@ CREATE TABLE titles(
 );
 
 -- employees and salaries for first query
-
+SELECT first_name,last_name, employees.emp_no FROM employees
+JOIN salaries ON employees.emp_no = salaries.emp_no
 -- employees for second query
-SELECT first_name,last_name,hire_date
-FROM employees
-WHERE hire_date = '1986'
+ SELECT first_name,last_name,hire_date
+ FROM employees
+ WHERE hire_date = '1986'
+
 -- employees and dept_manager for third query
 
 -- employees and departments for fourth query
 
 -- employees for fifth query 
-
+SELECT first_name,last_name,sex 
+FROM employees
+WHERE (first_name='Hercules' AND last_name LIKE 'B%')
 -- employees and departments for sixth query. filtered by sales department
 
 -- employees and departments for seventh query. filtered by sales and dev.
 
--- employees for eight query.
+-- employees for eighth query.
+SELECT last_name, COUNT(*)
+FROM employees
+GROUP BY last_name
