@@ -58,7 +58,9 @@ CREATE TABLE titles(
 -- employees and salaries for first query
 
 -- employees for second query
-
+SELECT first_name,last_name,hire_date
+FROM employees
+WHERE hire_date = '1986'
 -- employees and dept_manager for third query
 
 -- employees and departments for fourth query
