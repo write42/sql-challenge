@@ -17,7 +17,7 @@ SELECT * FROM titles;
 --Queries
 
 --first query
-SELECT first_name,last_name, employees.emp_no FROM employees
+SELECT first_name,last_name,sex, employees.emp_no,salaries.salary FROM employees
 JOIN salaries ON employees.emp_no = salaries.emp_no
 
 -- second query
@@ -48,16 +48,17 @@ SELECT employees.last_name, employees.first_name, departments.dept_name,dept_emp
 FROM employees
 JOIN dept_emp ON employees.emp_no=dept_emp.emp_no
 LEFT JOIN departments ON dept_emp.dept_no=departments.dept_no
-WHERE departments.dept_name='Sales'
+WHERE departments.dept_name='Sales';
 
 -- seventh query
 SELECT employees.last_name, employees.first_name, departments.dept_name,dept_emp.emp_no
 FROM employees
 JOIN dept_emp ON employees.emp_no=dept_emp.emp_no
 LEFT JOIN departments ON dept_emp.dept_no=departments.dept_no
-WHERE departments.dept_name='Sales'
+WHERE departments.dept_name='Sales' AND departments.dept_name='Development';
 
 -- eighth query
 SELECT last_name, COUNT(*)
 FROM employees
 GROUP BY last_name
+ORDER BY last_name DESC;
